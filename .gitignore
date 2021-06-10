@@ -1,0 +1,4 @@
+inaamvenv/
+__pycache__/
+*.pyc 
+
