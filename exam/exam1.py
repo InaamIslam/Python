@@ -1,4 +1,4 @@
-#------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2#------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
    # INSTRUCTIONS
  
@@ -74,17 +74,21 @@ def one(input1, input2):
    # No hints for this question
  
 def two(arg1):
-   if arg1 % 3 == 0 and arg1 % 5 ==0:
-       return "fizzbuzz"
-   elif arg1 % 3 == 0:
-       return "fizz"
-   elif arg1 % 5 == 0: 
-       return "buzz"
-   else:
-       return "null"
+    if arg1 % 3 == 0 and arg1 % 5 ==0:
+        return "fizzbuzz"
+    elif arg1 % 3 == 0:
+        return "fizz"
+    elif arg1 % 5 == 0:
+        return "buzz"
+    else:
+        return "null"
+
+testing = two(10)
+
+print(testing)
  
- 
- 
+#THIS IS CORRECT
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
    # <QUESTION 3>
@@ -105,26 +109,22 @@ def three(input):
     input = input.lower()
     count = 0 
     word_length = len(input)
-    for letter in range(word_length)
-        if input[letter] == "a"
-        count += 1
-        elif input[letter] == "e"
-        count += 1 
-        elif input[letter] == "i"
-        count += 1 
-        elif input[letter] == "o"
-        count += 1 
-        elif input[letter] == "u"
-        count += 1 
+    for letter in range(word_length):
+        if input[letter] == "a":
+            count += 1
+        elif input[letter] == "e":
+            count += 1 
+        elif input[letter] == "i":
+            count += 1 
+        elif input[letter] == "o":
+            count += 1 
+        elif input[letter] == "u":
+            count += 1 
     return count
 
-    ########
+testing = three("elegant")
 
-   num_vowels=0
-   for char in input:
-       if char in "aeiouAEIOU":
-          num_vowels = num_vowels+1
-   return num_vowels
+#THIS IS CORRECT
  
 
  
@@ -149,26 +149,27 @@ def three(input):
  
  
 def four(input):
-   if "cie" in input:
-       return False
-   elif "cei" in input:
-       return True
-   elif "ei" in input:
-       return False
-   elif "ie" in input:
-       return True
-   else:
-       return True
+    for letter in range(len(input)):
+        if input[letter] == "e" and input[letter+1] == "i":
+            if input[letter-1] == "c":
+                return True
+            else:
+                return False
+        elif input[letter] == "i" and input[letter+1] == "e":
+            if input[letter-1] == "c":
+                return False
+            else:
+                return True
  
-ANSWER WITH LUKE BENSON 
-  
-  
- 
- 
- 
- 
- 
- 
+testing = four("glacier")
+testing2 = four("believe")
+
+print(testing)
+print(testing2)
+
+#THIS IS CORRECT, MAY HAVE EASIER METHODS 
+
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
    # <QUESTION 5>
@@ -187,7 +188,23 @@ ANSWER WITH LUKE BENSON
    # You may need to create a list of numbers from 0 to i, take a look at help(range).
  
 def five(input):
-   return 1
+    import math 
+    return math.factorial(input)
+
+test = five(8)
+print(test)
+
+--------
+def five(input):
+    total = 1
+    for num in range(1, input+1):
+        total *= num
+    return total 
+
+test = five(8)
+print(test)
+
+#THIS IS CORRECT
  
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
